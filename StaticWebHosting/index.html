@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WELCOME PAGE</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .slider {
+            width: 800px;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .welcome-message {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px;
+        }
+    </style>
+    <script>
+        var messages = [
+            "Welcome to my channel IFY Studio",
+            "Please like share and subscribe",
+            "Grateful forever 🙏🏻"
+        ];
+        function displayRandomMessage() {
+            var message = messages[Math.floor(Math.random() * messages.length)];
+            alert(message);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="slider">
+            <img src="a.jpg" alt="Image 1">
+            <img src="b.jpg" alt="Image 2">
+            <img src="c.jpg" alt="Image 3">
+        </div>
+        <h1 class="welcome-message">WELCOME TO MY WEBSITE</h1>
+        <button class="btn btn-primary" onclick="displayRandomMessage()">SHOW RANDOM MESSAGE</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        var sliderImages = document.querySelectorAll('.slider img');
+        var currentImageIndex = 0;
+
+        function showNextImage() {
+            sliderImages[currentImageIndex].style.display = 'none';
+            currentImageIndex = (currentImageIndex + 1) % sliderImages.length;
+            sliderImages[currentImageIndex].style.display = 'block';
+        }
+        setInterval(showNextImage, 1500);
+    </script>
+</body>
+</html>
